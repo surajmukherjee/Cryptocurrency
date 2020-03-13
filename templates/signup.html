@@ -1,0 +1,61 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{CSS_URl}}/css/sign_up.css">
+    <link rel="stylesheet" type="text/css" href="{{CSS_URL}}/css/main.css">
+    <a href="/icons/icons8_dollar_bitcoin_exchange.ico"></a>
+ 	 
+ 	 	<img src="{{ ICONS_URL }}/icons/web_logo2.JPG" class="web_logo web_logo_signup">
+</head>
+<body>
+        <ul class="side_bar_signup side_bar_option_flex">
+        	<li class="side_bar_option_signup" id="buy_coin" onclick="alert('hi')">
+        		<img src="{{ ICONS_URL }}/icons/bitcoin_75px.png" class="icons">
+        		<t id="side_bar_option_text">Buy coins</t>
+        	</li>
+        	<li class="side_bar_option_signup" id="live_price">
+        		<img src="{{ ICONS_URL }}/icons/candlestick_chart_75px.png" class="icons">
+        	</li>
+        	<li class="side_bar_option_signup" id="tutorial">
+        		<img src="{{ ICONS_URL }}/icons/training_75px.png" class="icons">
+        	</li> 
+        	<li class="side_bar_option_signup" id="Account">
+        		<img src="{{ ICONS_URL }}/icons/account_75px.png" class="icons">
+        	</li> 
+        </ul>
+    <form>
+    	<div class="sign_up_box side_bar_option_flex">
+          <div><h2>Sign Up</h2></div>
+          <div>
+          	<t style="position: relative;top:5px;">Name:</t>
+          	<input type="text" name="fullname" class="input" style="position: relative;top: 20px;left: 5px;height: 40px;width:250px">
+          </div>
+          <div>
+          	<t style="position: relative;left:-20px;">Email:</t>
+          	<input type="Email" name="email" class="input" style="position: relative;top: 20px;left:0;height: 40px;width: 250px">
+          </div>
+       	  <div>
+       	  	<t style="position: relative;left:-20px;">Password:</t>
+       	  	<input type="Password" name="Password" class="input" style="position: relative;top: 20px;left:-25px;height: 40px;width: 250px">
+       	  </div>
+       	  <div>
+       	  	<t style="position: relative;left:-20px;">Gender:</t>
+       	  	<input type="radio" name="gender" class="input" value="Male" style="position: relative;top: 20px;left:-20px">
+       	  	  <t style="position: relative;left: -10px">Male</t>
+       	  	<br>
+            <input type="radio" name="gender" class="input" value="Female" style="position: relative;top: 20px;left:-10px">
+             <t style="position: relative;left: -10px">Female</t>
+          </div>
+          <div>
+          	<t style="position: relative;top: -5px">Mobile number:</t>
+          	<input type="text" name="mobile" class="input" style="position: relative;left:0;height: 40px;width: 250px">
+          </div>
+          <div>
+          		<button class="button">
+          			<t style="position: relative;top:-22px;left: 20px;font-size: 30px;color:#ABABAB">SUBMIT</t>
+          		</button>
+          </div>
+       </div>
+    </form>
+</body>
+</html>

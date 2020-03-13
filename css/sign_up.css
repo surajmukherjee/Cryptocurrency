@@ -1,0 +1,83 @@
+.sign_up_box{
+    border-style: hidden;
+    border-color: black;
+    margin-left: 350px; 
+    padding-top: 70px;
+    font-size: 30px;
+    color: #ABABAB;
+    box-shadow: 10px 10px 20px #1a191a,0 10px 20px #1a191a,-10px 0 10px #5b575b,0 -10px 10px #5b575b; 
+    border-radius: 20px;
+}
+.sign_up_box:hover{
+	box-shadow: 0 0 50px #00FF00;
+}
+.side_bar_signup{
+	margin: 0;
+	border-style: solid;
+	height: 500px;
+	width: 200px;
+	border-color: #272527;
+	background-color: #272527;
+	position: fixed;
+	left: -20px;
+	top: 200px;
+	transition: 0.5s;
+}
+.side_bar_signup:hover{
+    width: 300px;
+    border-radius: 20px;
+
+}
+.side_bar_option_signup{
+	border-style: hidden;
+	border-color: black;
+	border-radius: 10px;
+	padding-left: 40px;
+	padding-right: 40px;  
+    margin-top: 30px;
+    margin-left: 0;
+    height: 60px;
+    width: 140px;
+    transition: 0.5s;
+}
+.side_bar_option_signup:hover{
+	margin-left: 0;
+	background-color: #1b181b;
+    width: 180px;
+    box-shadow: 0 0 10px #00FF00,0 0 20px #00FF00;
+}
+
+.input{
+	border-style: solid;
+	border-radius: 20px;
+	border-color: #383638;
+	background-color: #272527;
+	font-size: 20px;
+	color: #ABABAB;
+}
+.input:hover{
+	border-color: #00FF00;
+	cursor: crosshair;
+}
+.icons{
+	height: 70px;
+	width: 70px;
+	align-items: center;
+	position: relative;
+	top: -20px;
+}
+h2{
+	position: relative;
+	top: -50px;
+	margin-bottom: -60px;
+}
+.button{
+	border-style: solid;
+	width: 200px;
+	height: 50px;
+	border-radius: 20px;
+	border-color: #383638;
+	background-color: #383638;
+	box-shadow: 10px 5px 20px #1a191a,0 5px 20px #1a191a,-10px 0 5px #5b575b,0 -10px 5px #5b575b;
+    cursor: pointer;
+}
