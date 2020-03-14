@@ -27,5 +27,4 @@ class RoleDetail(models.Model):
     is_active = models.NullBooleanField(default=0)
 
 
-class General:
-    pass
+
