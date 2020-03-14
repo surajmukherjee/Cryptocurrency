@@ -48,9 +48,24 @@ def linkVerify(request):
             return HttpResponse("<h1>Invalid Response</h1>")
 
 
-# def loginPage(request):
-#     if request.method == 'POST':
-#         if RoleDetail.objects
-#     return render(request, 'login.html')
+def loginPage(request):
+    if request.method == 'POST':
+        if RoleDetail.objects.filter(email=request.POST['email'].exists()) is True:
+            user_data_email = RoleDetail.objects.get(email=request.POST['email'])
+            if check_password(request.POST['Password'], user_data_email.password):
+                print("User Found")
+                if user_data_email.is_active == 1:
+                    # print("User Is Active and Verified")
+                    return HttpResponse("<h1>User Is ACTIVE </h1>")
+                else:
+                    if user_data_email.verify_link != "":
+                        return render(request, 'login.html', {'verify_mail_notDone ': True})
+                    else:
+                        return render(request, 'login.html', {'permission_denied': True})
+            else:
+                return render(request, 'login.html', {'invalid_password': True})
+        else:
+            return render(request, 'login.html', {'invalid_email': True})
+    return render(request, 'login.html')
 
 

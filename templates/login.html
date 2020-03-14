@@ -21,7 +21,7 @@
         <img src="{{ ICONS_URL }}/icons/account_75px.png" class="icons">
     </li>
 </ul>
-<form>
+<form method="post">
     {% csrf_token %}
     <div class="login_box side_bar_option_flex_login">
         <div><h2>Log in</h2></div>
@@ -40,5 +40,10 @@
         </div>
     </div>
 </form>
+{% if invalid_email %}
+    <div>INVALID EMAIL</div>
+    {% elif invalid_password %}
+    <div>Invalid Password</div>
+{% endif %}
 </body>
 </html>
