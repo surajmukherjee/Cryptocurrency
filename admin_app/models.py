@@ -25,3 +25,7 @@ class RoleDetail(models.Model):
     otp_time = models.CharField(max_length=255, default="", blank=True, null=True)
     verify_link = models.CharField(max_length=255, default="", blank=True, null=True)
     is_active = models.NullBooleanField(default=0)
+
+
+class General:
+    pass
