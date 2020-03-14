@@ -50,10 +50,9 @@ def linkVerify(request):
 
 def loginPage(request):
     if request.method == 'POST':
-        if RoleDetail.objects.filter(email=request.POST['email'].exists()) is True:
+        if RoleDetail.objects.filter(email=request.POST['email']).exists() is True:
             user_data_email = RoleDetail.objects.get(email=request.POST['email'])
             if check_password(request.POST['Password'], user_data_email.password):
-                print("User Found")
                 if user_data_email.is_active == 1:
                     # print("User Is Active and Verified")
                     return HttpResponse("<h1>User Is ACTIVE </h1>")
