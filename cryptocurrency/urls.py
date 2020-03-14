@@ -19,10 +19,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from admin_app import views
+from django.conf.urls.static import static
+from cryptocurrency import settings
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   url(r'^$', views.indexPage),
                   url(r'^signUpPage/$', views.signUpPage),
                   url(r'^logInPage/$', views.loginPage),
-              ]
+                  url(r'^verify/$', views.linkVerify), ] \
+              + static(settings.ICONS_URL, document_root=settings.ICONS_ROOT) \
+              + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+              + static(settings.CSS_URL, document_root=settings.CSS_ROOT)
