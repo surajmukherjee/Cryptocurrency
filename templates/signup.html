@@ -1,4 +1,3 @@
-{% load static %}
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="{{CSS_URl}}/css/sign_up.css">
@@ -23,7 +22,8 @@
         		<img src="{{ ICONS_URL }}/icons/account_75px.png" class="icons">
         	</li> 
         </ul>
-    <form>
+    <form method="post">
+        {% csrf_token %}
     	<div class="sign_up_box side_bar_option_flex">
           <div><h2>Sign Up</h2></div>
           <div>
