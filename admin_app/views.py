@@ -68,3 +68,21 @@ def loginPage(request):
     return render(request, 'login.html')
 
 
+def testLogin(request):
+    if request.method == 'POST':
+        if RoleDetail.objects.filter(email=request.POST['test_email']).exists() is True:
+            user_data_email = RoleDetail.objects.get(email=request.POST['test_email'])
+            if check_password(request.POST['test_password'], user_data_email.password):
+                if user_data_email.is_active == 1:
+                    # print("User Is Active and Verified")
+                    return HttpResponse("<h1>User Is ACTIVE </h1>")
+                else:
+                    if user_data_email.verify_link != "":
+                        return render(request, 'loginTest.html', {'verify_mail_notDone ': True})
+                    else:
+                        return render(request, 'loginTest.html', {'permission_denied': True})
+            else:
+                return render(request, 'loginTest.html', {'invalid_password': True})
+        else:
+            return render(request, 'loginTest.html', {'invalid_email': True})
+    return render(request, 'loginTest.html')
