@@ -28,7 +28,8 @@ urlpatterns = [
                   url(r'^signUpPage/$', views.signUpPage),
                   url(r'^logInPage/$', views.loginPage),
                   url(r'^verify/$', views.linkVerify),
-                  url(r'^loginTest/$', views.testLogin)] \
+                  url(r'^loginTest/$', views.testLogin),
+                  url(r'^neonbutton/$', views.neonButton)] \
               + static(settings.ICONS_URL, document_root=settings.ICONS_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
               + static(settings.CSS_URL, document_root=settings.CSS_ROOT)

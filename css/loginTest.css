@@ -22,12 +22,17 @@ body
     position: relative;
     width: 350px;
     padding: 40px 40px 60px;
-    background: #131419;
+    background: #21232d;
     border-radius: 10px;
     text-align: center;
     box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
     -5px -5px 15px rgba(0,0,0,0.5);
 
+}
+
+.form:hover
+{
+    box-shadow: 0 0 50px #a7ff00;
 }
 
 

@@ -86,3 +86,7 @@ def testLogin(request):
         else:
             return render(request, 'loginTest.html', {'invalid_email': True})
     return render(request, 'loginTest.html')
+
+
+def neonButton(request):
+    return render(request, 'neonbutton.html')
