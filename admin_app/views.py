@@ -2,14 +2,21 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect, HttpResponse
 from django.db.models import Q
 from django.contrib.auth.hashers import make_password, check_password
-from admin_app.forms import SignUpForm
+from admin_app.forms import SignUpForm, CoinListForm
 from admin_app.models import RoleDetail
 from Functions.generateString import generateString
 from Functions.verifyMail import verify_mail_send
+from pycoingecko import CoinGeckoAPI
+import requests
 
 
 def indexPage(request):
     return render(request, 'index.html')
+
+
+def test(request):
+    data = CoinGeckoAPI()
+    print(data.get_coins_list())
 
 
 def signUpPage(request):
@@ -90,3 +97,18 @@ def testLogin(request):
 
 def neonButton(request):
     return render(request, 'neonbutton.html')
+
+
+def coin_symbol_data(request):
+    data = requests.get('https://api.coingecko.com/api/v3/coins/list')
+    if request.method == "POST":
+        symbol = request.POST['symbol']
+        for dictionary in data.json():
+            if dictionary.get('symbol') == symbol:
+                form = CoinListForm(request.POST)
+                if form.is_valid():
+                    f = form.save(commit=False)
+                    f.symbol = dictionary['symbol']
+                    f.name = dictionary['name']
+                    f.save()
+    return render(request, "coin_symbol.html")

@@ -27,4 +27,7 @@ class RoleDetail(models.Model):
     is_active = models.NullBooleanField(default=0)
 
 
-
+class CoinSymbol(models.Model):
+    c_id = models.AutoField(primary_key=True)
+    c_name = models.CharField(max_length=255, default="", null=True, unique=True)
+    c_symbol = models.CharField(max_length=255, default="", null=True, unique=True)
