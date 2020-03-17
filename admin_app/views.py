@@ -6,17 +6,11 @@ from admin_app.forms import SignUpForm, CoinListForm
 from admin_app.models import RoleDetail
 from Functions.generateString import generateString
 from Functions.verifyMail import verify_mail_send
-from pycoingecko import CoinGeckoAPI
 import requests
 
 
 def indexPage(request):
     return render(request, 'index.html')
-
-
-def test(request):
-    data = CoinGeckoAPI()
-    print(data.get_coins_list())
 
 
 def signUpPage(request):
@@ -108,7 +102,8 @@ def coin_symbol_data(request):
                 form = CoinListForm(request.POST)
                 if form.is_valid():
                     f = form.save(commit=False)
-                    f.symbol = dictionary['symbol']
-                    f.name = dictionary['name']
+                    f.c_symbol = dictionary['symbol']
+                    f.c_name = dictionary['name']
                     f.save()
+                    return render(request, 'coin_symbol.html', {'coin_added': True})
     return render(request, "coin_symbol.html")

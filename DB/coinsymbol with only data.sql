@@ -29,7 +29,7 @@ CREATE TABLE `admin_app_coinsymbol` (
   PRIMARY KEY (`c_id`),
   UNIQUE KEY `c_name` (`c_name`),
   UNIQUE KEY `c_symbol` (`c_symbol`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `admin_app_coinsymbol` (
 
 LOCK TABLES `admin_app_coinsymbol` WRITE;
 /*!40000 ALTER TABLE `admin_app_coinsymbol` DISABLE KEYS */;
+INSERT INTO `admin_app_coinsymbol` VALUES (1,'Bitcoin','btc'),(2,'Ethereum','eth'),(3,'XRP','xrp'),(4,'Tether','usdt'),(5,'Bitcoin Cash','bch'),(6,'Litecoin','ltc'),(7,'Bitcoin SV','bsv'),(8,'EOS','eos'),(9,'Binance Coin','bnb'),(10,'OKB','okb'),(11,'Tezos','xtz'),(12,'LEOcoin','leo'),(13,'Cardano','ada'),(14,'Stellar','xlm'),(15,'ChainLink','link'),(16,'Huobi Token','ht'),(17,'TRON','trx'),(18,'Monero','xmr'),(19,'USD Coin','usdc'),(20,'Ethereum Classic','etc'),(21,'Qtum','qtum'),(22,'Dash','dash'),(23,'NEO','neo'),(24,'Ontology','ont'),(25,'IOTA','miota');
 /*!40000 ALTER TABLE `admin_app_coinsymbol` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-17 17:42:08
+-- Dump completed on 2020-03-17 18:58:47

@@ -30,8 +30,7 @@ urlpatterns = [
                   url(r'^verify/$', views.linkVerify),
                   url(r'^loginTest/$', views.testLogin),
                   url(r'^neonbutton/$', views.neonButton),
-                  url(r'^test/$', views.test),
-                  url(r'^coinsymbol/$', views.coin_symbol_data)] \
+                  url(r'^coinsymbol/$', views.coin_symbol_data), ] \
               + static(settings.ICONS_URL, document_root=settings.ICONS_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
               + static(settings.CSS_URL, document_root=settings.CSS_ROOT)
