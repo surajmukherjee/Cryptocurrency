@@ -1,12 +1,13 @@
 <html>
 <head>
-   <link rel="stylesheet" type="text/css" href="css/login2.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+   <link rel="stylesheet" type={{ CSS_URL }}"text/css" href="/css/login_final.css">
+    <link rel="stylesheet" type={{ CSS_URL }} "text/css" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Nanum+Gothic|Poppins&display=swap" rel="stylesheet">
-    <img src="icon\web_logo2.jpg" class="web_logo">
+    <img src="{{ ICONS_URL }}/icons/Asset 10.png" class="web_logo">
 </head>
 <body>
-<form>
+<form method="post">
+    {% csrf_token %}
     <div class="login_box side_bar_option_flex_login" id="login_box">
         <div><h2>LOGIN</h2></div>
             <div style="margin: 20px">
@@ -36,7 +37,7 @@
             </div>
             <div>
                 <t  style="position: relative;top: 20px;left:200px;height: 40px;width: 350px;font-size: 15px;">Not Register? Register Now</t>
-                <a href="sign_up2.html" style="position: relative;top: 15px;margin:2px;left:50px;height: 40px;width: 350px;font-size: 20px;color: red;">Click here</a>
+                <a href="signup_final.html" style="position: relative;top: 15px;margin:2px;left:50px;height: 40px;width: 350px;font-size: 20px;color: red;">Click here</a>
             </div>
             <div>
                 <t  style="position: relative;top: 20px;left:250px;height: 40px;width: 350px;font-size: 15px;">Forgot Password</t>
@@ -44,9 +45,8 @@
             </div>
         </div>
 </form>
-<d onclick="Invalid_email();" style="position: relative;top: 300px;">Invalid email</d>
-<d onclick="Invalid_password();" style="position: relative;top: 400px;">invalid password</d>
-<script type="text/javascript" src="javascript/script.js">
-    </script>
+{#<d onclick="Invalid_email();" style="position: relative;top: 300px;">Invalid email</d>#}
+{#<d onclick="Invalid_password();" style="position: relative;top: 400px;">invalid password</d>#}
+<script type="text/javascript" src="/javascript/script.js"></script>
 </body>
 </html>

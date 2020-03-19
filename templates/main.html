@@ -2,32 +2,54 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
- 	<a href="/icons/icons8_dollar_bitcoin_exchange.ico"></a>
- 	 
- 	 	<img src="/icons/web_logo2.JPG" class="web_logo">
+    <link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
+ 	 	<img src="/icons/Asset 10.png" class="web_logo">
  	  	<div style="position: fixed;left: 700px;top: 25px;">
-		 	<button class="menuoption">Buy Cripto</button>
-		 	<button class="menuoption">live price</button>
-		 	<button class="menuoption">tutorial</button>
-		 	<button class="menuoption">Account</button>
+		 	<a href="/final_signup_page/" target="_black" class="menuoption">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Sign up
+            </a>
+		 	<a href="/final_login_page/" class="menuoption">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Log in
+            </a>
         </div>
 </head>
-<body>
-        <ul class="side_bar side_bar_option_flex">
-        	<li class="side_bar_option" id="buy_coin" onclick="alert('hi')">
-        		<img src="/icons/bitcoin_75px.png" class="icons">
-        		<t id="side_bar_option_text">Buy coins</t>
-        	</li>
+<body >
+        <ul class="side_bar side_bar_option_flex" id="side_bar">
+        	
+                <li class="side_bar_option" id="buy_coin">
+            		<img src="/icons/bitcoin_75px.png" class="icons">
+            		<t class="side_bar_option_text" id="buy_coin_text_id"></t>
+            	</li>
+            
         	<li class="side_bar_option" id="live_price">
         		<img src="/icons/candlestick_chart_75px.png" class="icons">
+                <t class="side_bar_option_text" id="live_price_text_id"></t>
         	</li>
         	<li class="side_bar_option" id="tutorial">
         		<img src="/icons/training_75px.png" class="icons">
-        	</li> 
-        	<li class="side_bar_option" id="Account">
-        		<img src="/icons/account_75px.png" class="icons">
-            </li>
-        </ul>
-    <script type="text/javascript" src="/javascript/javascipt.js"></script>
+                <t class="side_bar_option_text" id="tutorial_text_id"></t>
+        	</li>
+            <a href="Account.html"> 
+            	<li class="side_bar_option" id="Account">
+            		<img src="/icons/account_75px.png" class="icons">
+                    <t class="side_bar_option_text" id="Account_text_id"></t>
+            	</li>
+            </a>    
+		</ul>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <div class="block">
+            
+        </div>
+    <script type="text/javascript" src="/javascript/script.js">
+    </script>
+
 </body>
 </html>

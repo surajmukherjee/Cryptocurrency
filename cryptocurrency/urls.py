@@ -25,12 +25,13 @@ from cryptocurrency import settings
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   url(r'^$', views.indexPage),
-                  url(r'^signUpPage/$', views.signUpPage),
-                  url(r'^logInPage/$', views.loginPage),
                   url(r'^verify/$', views.linkVerify),
-                  url(r'^loginTest/$', views.testLogin),
                   url(r'^neonbutton/$', views.neonButton),
-                  url(r'^coinsymbol/$', views.coin_symbol_data), ] \
+                  url(r'^coinsymbol/$', views.coin_symbol_data),
+                  url(r'^final_login_page/$', views.final_login_page),
+                  url(r'^final_signup_page/$', views.final_signup_page),
+                  url(r'main_test/$', views.main_test)] \
               + static(settings.ICONS_URL, document_root=settings.ICONS_ROOT) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
-              + static(settings.CSS_URL, document_root=settings.CSS_ROOT)
+              + static(settings.CSS_URL, document_root=settings.CSS_ROOT) \
+              + static(settings.JAVASCRIPT_URL, document_root=settings.JAVASCRIPT_ROOT)
