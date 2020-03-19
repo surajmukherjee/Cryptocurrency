@@ -13,15 +13,9 @@ document.getElementById("side_bar").onmouseout = function() {
         var n=0;
 function Invalid_email(){
     document.getElementById("invalid_email").innerHTML="<spam class='invalid_massage'>Invalid Email</spam>";
-    n=n+1;
-    if(n>=2){
         document.getElementById("login_box").style.width="400px";
-    }
 }
 function Invalid_password(){
-    document.getElementById("invalid_password").innerHTML="<spam class='invalid_massage'>Invalid password</spam>";   
-    n=n+1;
-    if(n>=2){
+    document.getElementById("invalid_password").innerHTML="<spam class='invalid_massage'>Invalid password</spam>";
         document.getElementById("login_box").style.width="400px";
-    }
 }

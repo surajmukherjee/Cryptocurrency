@@ -45,8 +45,15 @@
             </div>
         </div>
 </form>
-{#<d onclick="Invalid_email();" style="position: relative;top: 300px;">Invalid email</d>#}
-{#<d onclick="Invalid_password();" style="position: relative;top: 400px;">invalid password</d>#}
+{% if invalid_email == True %}
+    <script>invalid_email();</script>
+{% elif invalid_pass == True %}
+    <script>
+document.getElementById("invalid_password").innerHTML="<spam class='invalid_massage'>Invalid password</spam>";
+        document.getElementById("login_box").style.width="400px";
+    </script>
+{% endif %}
+
 <script type="text/javascript" src="/javascript/script.js"></script>
 </body>
 </html>

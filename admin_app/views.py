@@ -79,13 +79,13 @@ def final_login_page(request):
                     return HttpResponse("<h1>User Is ACTIVE </h1>")
                 else:
                     if user_data_email.verify_link != "":
-                        return render(request, 'login_final.html')
+                        return render(request, 'login_final.html', {'verify_mail': True})
                     else:
                         return render(request, 'login_final.html')
             else:
-                return render(request, 'login_final.html')
+                return render(request, 'login_final.html', {'invalid_pass': True})
         else:
-            return render(request, 'login_final.html')
+            return render(request, 'login_final.html', {'invalid_email': True})
     return render(request, 'login_final.html')
 
 
