@@ -3,7 +3,7 @@
    <link rel="stylesheet" type={{ CSS_URL }}"text/css" href="/css/login_final.css">
     <link rel="stylesheet" type={{ CSS_URL }} "text/css" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Nanum+Gothic|Poppins&display=swap" rel="stylesheet">
-    <img src="{{ ICONS_URL }}/icons/Asset 10.png" class="web_logo">
+    <img class="web_logo">
 </head>
 <body>
 <form method="post">
@@ -46,14 +46,14 @@
         </div>
 </form>
 {% if invalid_email == True %}
-    <script>invalid_email();</script>
+    <script style="visibility: hidden;">
+      document.getElementById("invalid_email").innerHTML="<spam class='invalid_massage'>Invalid Email</spam>";
+    </script>
 {% elif invalid_pass == True %}
-    <script>
+    <script style="visibility: hidden;">
 document.getElementById("invalid_password").innerHTML="<spam class='invalid_massage'>Invalid password</spam>";
-        document.getElementById("login_box").style.width="400px";
     </script>
 {% endif %}
-
 <script type="text/javascript" src="/javascript/script.js"></script>
 </body>
 </html>
