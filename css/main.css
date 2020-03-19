@@ -137,7 +137,7 @@ ps {
 }
 
 body {
-    background-image: url('../media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     background-attachment: fixed;
 }
 
@@ -161,7 +161,7 @@ body {
 }
 
 .web_logo {
-    background-image: url(../media/icon1.png);
+    background-image: url(../icons/icon1.png);
     background-repeat: no-repeat;
     height: 170px;
     width: 180px;
@@ -173,7 +173,7 @@ body {
 }
 
 .web_logo:hover {
-    background-image: url(../media/icon2_hover.png);
+    background-image: url(../icons/icon2_hover.png);
     height: 180px;
     left: -5px;
     cursor: pointer;
@@ -200,7 +200,7 @@ body {
     height: 500px;
     width: 200px;
     border-color: #272527;
-    background-image: url('media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
     left: -20px;
     top: 200px;
