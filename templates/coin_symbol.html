@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coin Symbol Adding</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label>Enter Coin SYMBOL
+        <input type="text" name="symbol" placeholder="Enter Symbol">
+    </label>
+    <br><br>
+    <input type="submit" name="submit" value="SUBMIT">
+</form>
+{% if coin_added %}
+    <div>ADDED</div>
+{% endif %}
+</body>
+</html>

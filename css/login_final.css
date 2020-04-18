@@ -1,0 +1,78 @@
+*{
+    font-size: 30px;
+    color: #66ffcc;
+}
+h2{
+    position: relative;
+    top: 10px;
+    margin-bottom: 60px;
+    font-size: 40px;
+}
+.login_box{
+    border-style: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    height: 520px;
+    width: 350px;
+    margin-left: 10px;
+    /*box-shadow: 10px 10px 20px #bfbfbf,0 10px 20px #bfbfbf,-10px 0 10px #ffffff,0 -10px 10px #ffffff;
+*/
+box-shadow: 10px 10px 20px #1a191a,0 10px 20px #1a191a,-10px 0 10px #5b575b,0 -10px 10px #5b575b;
+}
+.login_box:hover{
+    box-shadow: 0 0 50px #00ff00;
+}
+.input{
+   border-style: solid;
+    border-color: #383638; 
+    border-radius: 20px; 
+    background-color: #383638;
+    font-size: 20px;
+    color: #66ffcc;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    box-shadow: inset 10px 0 10px #1a191a,inset 0 10px 10px #1a191a,inset -10px 0 10px #5b575b,inset 0 10px 10px #5b575b;
+    height: 40px;
+    width: 250px; 
+    }
+.input:hover{
+    border-bottom-color: #00ff00;
+
+}
+.input_checkbox{
+    position: relative;
+    top: -15px;
+    left:-280px;
+    height: 20px;
+    width: 40px;
+}
+.button{
+    border-style: hidden;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border-color: #3385ff;
+    background-color: #383638;
+    box-shadow: 5px 5px 5px #1a191a,0 2px 5px #1a191a,-5px 0 5px #5b575b,0 -5px 5px #5b575b;
+    cursor: pointer;
+    position: relative;
+    top: -20px;
+}
+.button:active{
+    box-shadow: inset 5px 5px 5px #1a191a,inset 0 2px 5px #1a191a,inset -5px 0 5px #5b575b,inset 0 -5px 5px #5b575b;
+    outline: none;
+}
+.button:hover{
+
+}
+.side_bar_option_flex_login{
+    flex-direction: column;
+    align-items:center;
+    margin: 10px;
+}
+.invalid_massage{
+    font-size: 15px;
+    color: red;
+}

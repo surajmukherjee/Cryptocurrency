@@ -2,17 +2,52 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect, HttpResponse
 from django.db.models import Q
 from django.contrib.auth.hashers import make_password, check_password
-from admin_app.forms import SignUpForm
+from admin_app.forms import SignUpForm, CoinListForm
 from admin_app.models import RoleDetail
 from Functions.generateString import generateString
 from Functions.verifyMail import verify_mail_send
+import requests
 
 
 def indexPage(request):
     return render(request, 'index.html')
 
 
-def signUpPage(request):
+def linkVerify(request):
+    try:
+        token = request.GET['token']
+    except Exception as error:
+        return HttpResponse(error)
+    else:
+        if RoleDetail.objects.filter(verify_link=token).exists():
+            update = RoleDetail(email=RoleDetail.objects.get(verify_link=token).email, verify_link="", is_active=1)
+            update.save(update_fields=['verify_link', 'is_active'])
+            return redirect("/logInPage/")
+        else:
+            return HttpResponse("<h1>Invalid Response</h1>")
+
+
+def neonButton(request):
+    return render(request, 'neonbutton.html')
+
+
+def coin_symbol_data(request):
+    data = requests.get('https://api.coingecko.com/api/v3/coins/list')
+    if request.method == "POST":
+        symbol = request.POST['symbol']
+        for dictionary in data.json():
+            if dictionary.get('symbol') == symbol:
+                form = CoinListForm(request.POST)
+                if form.is_valid():
+                    f = form.save(commit=False)
+                    f.c_symbol = dictionary['symbol']
+                    f.c_name = dictionary['name']
+                    f.save()
+                    return render(request, 'coin_symbol.html', {'coin_added': True})
+    return render(request, "coin_symbol.html")
+
+
+def final_signup_page(request):
     if request.method == 'POST':
         signup_form = SignUpForm(request.POST)
         if signup_form.is_valid():
@@ -31,26 +66,28 @@ def signUpPage(request):
             return HttpResponse("<h1> Sign Up Process Complete, Check your Mail Id for verification link</h1>")
         else:
             return HttpResponse("<h1>Page Not Found</h1>")
-    return render(request, 'signup.html')
+    return render(request, 'signup_final.html')
 
 
-def linkVerify(request):
-    try:
-        token = request.GET['token']
-    except Exception as error:
-        return HttpResponse(error)
-    else:
-        if RoleDetail.objects.filter(verify_link=token).exists():
-            update = RoleDetail(email=RoleDetail.objects.get(verify_link=token).email, verify_link="", is_active=1)
-            update.save(update_fields=['verify_link', 'is_active'])
-            return redirect("/logInPage/")
+def final_login_page(request):
+    if request.method == 'POST':
+        if RoleDetail.objects.filter(email=request.POST['email']).exists() is True:
+            user_data_email = RoleDetail.objects.get(email=request.POST['email'])
+            if check_password(request.POST['Password'], user_data_email.password):
+                if user_data_email.is_active == 1:
+                    # print("User Is Active and Verified")
+                    return HttpResponse("<h1>User Is ACTIVE </h1>")
+                else:
+                    if user_data_email.verify_link != "":
+                        return render(request, 'login_final.html', {'verify_mail': True})
+                    else:
+                        return render(request, 'login_final.html')
+            else:
+                return render(request, 'login_final.html', {'invalid_pass': True})
         else:
-            return HttpResponse("<h1>Invalid Response</h1>")
+            return render(request, 'login_final.html', {'invalid_email': True})
+    return render(request, 'login_final.html')
 
 
-# def loginPage(request):
-#     if request.method == 'POST':
-#         if RoleDetail.objects
-#     return render(request, 'login.html')
-
-
+def main_test(request):
+    return render(request, 'main.html')
