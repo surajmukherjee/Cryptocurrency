@@ -163,6 +163,7 @@ body {
 .web_logo {
     background-image: url(../icons/icon1.png);
     background-repeat: no-repeat;
+    border-style: hidden;
     height: 170px;
     width: 180px;
     position: fixed;
@@ -198,7 +199,7 @@ body {
     text-decoration: none;
     border-style: solid;
     height: 500px;
-    width: 200px;
+    width: 100px;
     border-color: #272527;
     background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
