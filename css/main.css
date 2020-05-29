@@ -199,7 +199,7 @@ body {
     text-decoration: none;
     border-style: solid;
     height: 500px;
-    width: 100px;
+    width: 200px;
     border-color: #272527;
     background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
@@ -224,7 +224,7 @@ body {
     margin-top: 40px;
     margin-left: 0;
     height: 75px;
-    width: 140px;
+    width: 170px;
     text-decoration: none;
     transition: 0.5s;
 }
