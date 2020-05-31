@@ -6,17 +6,33 @@
     display: flex;
     outline: none;
     text-decoration: none;
+    z-index: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-image: url("../media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg");
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .menuoption {
     text-decoration: none;
     position: relative;
-    left: 300px;
-    display: inline-block;
-    padding: 25px 30px;
-    margin: 40px 20px;
+    left: 1100px;
+    height: 30px;
+    padding: 10px 10px;
+    margin: 20px 10px;
     color: #03e9f4;
-    font-size: 24px;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
@@ -24,109 +40,26 @@
     letter-spacing: 4px;
 }
 
-.menuoption:nth-child(1) {
-    filter: hue-rotate(290deg);
+.menuoption-login {
+    color: #00ff00;
 }
 
-.menuoption:nth-child(3) {
-    filter: hue-rotate(110deg);
+.menuoption-login:hover {
+    background: #00ff00;
+    color: #050801;
+    box-shadow: 0 0 5px #00ff00,
+        0 0 25px #00ff00,
+        0 0 50px #00ff00,
+        0 0 200px #00ff00;
 }
 
-.menuoption:hover {
+.menuoption-signup:hover {
     background: #03e9f4;
     color: #050801;
     box-shadow: 0 0 5px #03e9f4,
         0 0 25px #03e9f4,
         0 0 50px #03e9f4,
         0 0 200px #03e9f4;
-}
-
-.menuoption span {
-    position: absolute;
-    display: block;
-}
-
-.menuoption span:nth-child(1) {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
-    animation: animate1 1s linear infinite;
-}
-
-@keyframes animate1 {
-    0% {
-        left: -100%;
-    }
-
-    50%,
-    100% {
-        left: 100%;
-    }
-}
-
-.menuoption span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: animate2 1s linear infinite;
-    animation-delay: 0.25s;
-}
-
-@keyframes animate2 {
-    0% {
-        top: -100%;
-    }
-
-    50%,
-    100% {
-        top: 100%;
-    }
-}
-
-.menuoption span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: animate3 1s linear infinite;
-    animation-delay: 0.5s;
-}
-
-@keyframes animate3 {
-    0% {
-        right: -100%;
-    }
-
-    50%,
-    100% {
-        right: 100%;
-    }
-}
-
-.menuoption span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
-    animation: animate4 1s linear infinite;
-    animation-delay: 0.75s;
-}
-
-@keyframes animate4 {
-    0% {
-        bottom: -100%;
-    }
-
-    50%,
-    100% {
-        bottom: 100%;
-    }
 }
 
 ps {
@@ -137,8 +70,9 @@ ps {
 }
 
 body {
-    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('../media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     background-attachment: fixed;
+    z-index: 1;
 }
 
 .side_bar_option_text {
@@ -161,12 +95,10 @@ body {
 }
 
 .web_logo {
-    background-image: url(../icons/icon1.png);
     background-repeat: no-repeat;
-    border-style: hidden;
     height: 170px;
     width: 180px;
-    position: fixed;
+    position: relative;
     top: 10px;
     left: 5px;
     margin: 0;
@@ -174,7 +106,6 @@ body {
 }
 
 .web_logo:hover {
-    background-image: url(../icons/icon2_hover.png);
     height: 180px;
     left: -5px;
     cursor: pointer;
@@ -190,24 +121,20 @@ body {
     left: 100px;
 }
 
-.menuoption {
-    height: 20px;
-}
-
 .side_bar {
     margin: 0;
     text-decoration: none;
     border-style: solid;
     height: 500px;
-    width: 200px;
+    width: 120px;
     border-color: #272527;
-    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
     left: -20px;
     top: 200px;
     transition: 0.5s;
     box-shadow: 10px 0 20px black;
-    z-index: 4;
+    z-index:3;
 }
 
 .side_bar:hover {
@@ -219,21 +146,24 @@ body {
     border-style: hidden;
     border-color: black;
     border-radius: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-top: 40px;
     margin-left: 0;
     height: 75px;
-    width: 170px;
+    width: 80px;
     text-decoration: none;
     transition: 0.5s;
+    z-index: 3;
 }
 
 .side_bar_option:hover {
+    left: 10px;
     margin-left: 0;
     background-color: #1b181b;
     width: 180px;
     box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+
 }
 
 .side_bar_option_flex {
@@ -244,12 +174,12 @@ body {
 .block {
     position: absolute;
     top: 200px;
-    left: 250px;
+    left: 150px;
     border-style: solid;
     border-color: black;
     height: 9000px;
-    width: 900px;
-    z-index: 2;
+    width: 1050px;
+    z-index:1;
 }
 
 #news {
@@ -257,6 +187,9 @@ body {
     height: 900px;
     width: 300px;
     color: #66ffcc;
+    position: relative;
+    top: 200px;
+    left: 800px;
 }
 
 #iner {
@@ -267,4 +200,9 @@ body {
     margin-top: 100px;
     margin-left: 10px;
     margin-right: 30px;
+}
+
+#chartContainer {
+    height: 300px;
+    width: 100%;
 }
