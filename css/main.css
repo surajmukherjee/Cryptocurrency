@@ -27,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 .menuoption {
     text-decoration: none;
     position: relative;
-    left: 1100px;
+    left: 90%;
     height: 30px;
     padding: 10px 10px;
     margin: 20px 10px;
@@ -126,7 +126,7 @@ body {
     text-decoration: none;
     border-style: solid;
     height: 500px;
-    width: 120px;
+    width: 180px;
     border-color: #272527;
     background-image: url('media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
