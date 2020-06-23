@@ -14,7 +14,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background-image: url("../media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg");
+    background-image: url("../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg");
 
 }
 
@@ -70,7 +70,7 @@ ps {
 }
 
 body {
-    background-image: url('../media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     background-attachment: fixed;
     z-index: 1;
 }
@@ -128,7 +128,7 @@ body {
     height: 500px;
     width: 180px;
     border-color: #272527;
-    background-image: url('media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
+    background-image: url('../Media/minimalist_black_pattern_i-wallpaper-1920x1080.jpg');
     position: fixed;
     left: -20px;
     top: 200px;

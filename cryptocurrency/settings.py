@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'crypto-currency',
         'HOST': '127.0.0.1',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'durgavihar151',
         'PORT': '3306',
     }
 }
